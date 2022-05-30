@@ -2,14 +2,10 @@ import React from "react";
 
 export default function DisplayInfo({ city }) {
   return (
-    <div>
+    <div className="text-center fw-bold fs-1">
       City: {city.name}
       <br />
-      {!city.sys.country ? (
-        <div> Country: Null </div>
-      ) : (
-        <div> Country: {city.sys.country} </div>
-      )}
+      Country: {city.sys.country}
     </div>
   );
 }

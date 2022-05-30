@@ -10,8 +10,8 @@ const API = {
 };
 
 function App() {
-  const [query, setQuery] = useState("Dhaka");
-  const [weather, setWeather] = useState(null);
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState([null]);
 
   useEffect(() => {
     fetch(`${API.base}weather?q=${query}&APPID=${API.key}`)
@@ -23,11 +23,11 @@ function App() {
 
   return (
     <div className="app">
-      <div className="search-box">
+      <div className="search-box ">
         <input
           type="text"
           className="search-bar"
-          placeholder="Search..."
+          placeholder="Search City..."
           onChange={(e) => setQuery(e.target.value)}
           value={query}
         />
